@@ -56,8 +56,8 @@ namespace TextReader
                  {Combination.FromString("Control+C"), () => SayCopiedText()},
                  {Combination.FromString("Escape"), quit},
             };
+
             Console.WriteLine("Press ESC to exit.");
-            //Actual loop
             Hook.GlobalEvents().OnCombination(map);
         }
 
@@ -67,7 +67,7 @@ namespace TextReader
             var text = Clipboard.GetText();
             var speechSynthesizerObj = new SpeechSynthesizer();
             
-            speechSynthesizerObj.SpeakAsync(text ?? "fuck you");
+            speechSynthesizerObj.SpeakAsync(text);
         }
     }
 }
