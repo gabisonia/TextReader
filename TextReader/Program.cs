@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Speech.Synthesis;
 using System.Windows.Forms;
 
 namespace TextReader
@@ -29,9 +30,7 @@ namespace TextReader
                     .Select(p => p.Value).FirstOrDefault();
             }
 
-            Console.WriteLine("-----------------------------");
-            Console.WriteLine("-----Application started-----");
-            Console.WriteLine("-----------------------------");
+            new SpeechSynthesizer().SpeakAsync("Application started");
 
             action(Application.Exit);
 
